@@ -1,6 +1,10 @@
 <?php
 
 if(isset($_POST['prenom']) && isset($_POST['nom'])) {
+
+  $nom =    htmlspecialchars($_POST['nom']);
+  $prenom = htmlspecialchars($_POST['prenom']);
+
   echo '<p>Welcome '.$_POST['prenom'].' '.$_POST['prenom'].' '.'</p>';
 }
 
