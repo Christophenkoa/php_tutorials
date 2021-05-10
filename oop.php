@@ -6,6 +6,7 @@ class Personnage {
     private $_force = 40;
     private $_classe = "Plombier";
     private $_couleurCasquette = "Rouge";
+    public $name = "unknown";
 
 
     // constructor
