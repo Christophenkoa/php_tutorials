@@ -8,10 +8,17 @@
     }
 
     // Add a user
-    $requete = $db->exec('INSERT INTO 
+    /* $requete = $db->exec('INSERT INTO 
                             users(prenom, nom, serie_preferee) 
                             VALUES("Mark", "Zuckerberg", "Gost Rider")')
+                            or die(print_r($db->errorInfo())); */
+
+    // This is the more secure way to avoid injection
+    $requete = $db->prepare('INSERT INTO 
+                            users(prenom, nom, serie_preferee) 
+                            VALUES(?, ?, ?)')
                             or die(print_r($db->errorInfo()));
+    $requete->execute(array("Charles", "Couteau", "Space X"));
 
     // Update an existing user information
     /* $requete = $db->exec('UPDATE users 
