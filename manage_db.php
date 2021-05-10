@@ -39,4 +39,7 @@
     }
 
     $requete->closeCursor();
+
+    // redirection
+    header('location: ../');
 ?>
